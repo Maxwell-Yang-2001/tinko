@@ -1,0 +1,165 @@
+$button-width: 230px;
+$orange-theme: #F1522A;
+$white-theme: white;
+$button-horizontal-padding: 20px;
+$button-vertical-padding: 15px;
+$button-margin: 10px;
+
+.white-font {
+    color: $white-theme;
+}
+
+.orange-font {
+    color: $orange-theme;
+}
+
+.homescreen-button:hover {
+    opacity: 1;
+}
+
+.homescreen-button {
+    width: $button-width;
+    min-Height: 60px;
+    border: 0;
+    border-radius: 4px;
+    cursor: pointer;
+    opacity: 0.8;
+    padding-left: $button-horizontal-padding;
+    padding-right: $button-horizontal-padding;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.centered-content {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+
+.image-container-centered-content {
+    text-align: center;
+    vertical-align: middle;
+}
+
+// To center inline block, please include a dummy div next to it
+.image-container-centered-content > * {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.font-bold-weight {
+    font-weight: 700;
+}
+
+#homescreen-button1 {
+    background-color: $orange-theme;
+    font-size: 20px;
+}
+
+#homescreen-button2 {
+    background-color: $white-theme;
+    font-size: 16px;
+}
+
+#homescreen-logo {
+    width: 350px;
+    height: auto;
+}
+
+#homescreen-background {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./../assets/login-background.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center 50%;
+
+    font-family: Lato,'Helvetica Neue',Helvetica,Arial,sans-serif;
+    line-height: 1.42857143;
+}
+
+#homescreen-title {
+    font-size: 72px;
+    font-weight: 900;
+}
+
+#homescreen-subtitle {
+    font-size: 38px;
+    max-width: 2.5 * $button-width;
+}
+
+#homescreen-container-buttons-container {
+    margin-top: 80px;
+}
+
+@media only screen and (max-width: 649px) {
+    #homescreen-logo {
+        width: 300 / 650 * 100%;
+        height: auto;
+    }
+
+    #homescreen-container {
+        text-align: center;
+    }
+
+    #homescreen-title {
+        font-size: 48px;
+    }
+    
+    #homescreen-subtitle {
+        font-size: 25px;
+        max-width: 75%;
+        margin: auto;
+    }
+
+    .homescreen-button {
+        margin: auto;
+    }
+}
+
+@media only screen and (min-width: 650px) {
+    #homescreen-container {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-direction: row;
+        flex-direction: row;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        -ms-flex-wrap: nowrap;
+        flex-wrap: nowrap;
+    }
+}
+
+@media only screen and (max-width: 849px) {
+
+    #homescreen-container-buttons-container {
+        text-align: center;
+    }
+
+    .homescreen-button {
+        display: block;
+    }
+
+    #homescreen-container-buttons-container {
+        margin-top: 40px;
+    }
+
+    #homescreen-button1 {
+        margin-bottom: 20px;
+    }
+}
+
+@media only screen and (min-width: 850px) {
+    #homescreen-button1 {
+        margin-right: $button-margin;
+    }
+    
+    #homescreen-button2 {
+        margin-left: $button-margin;
+    }
+}
