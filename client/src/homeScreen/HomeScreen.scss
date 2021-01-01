@@ -97,6 +97,7 @@ $button-margin: 10px;
     margin-top: 80px;
 }
 
+// screen-exclusive
 @media only screen and (max-width: 649px) {
     #homescreen-logo {
         width: 300 / 650 * 100%;
