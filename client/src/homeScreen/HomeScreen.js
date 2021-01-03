@@ -1,11 +1,11 @@
-import "./HomeScreen.scss";
+import "./homeScreen.scss";
 import bell from "./../assets/bell.png";
 import { Switch, BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 function HomeScreen(props) {
   return (
     <Router>
-      <div id="homescreen-background" className="centered-content">
+      <div id="homescreen-background" className="centered-container">
         <div id="homescreen-container">
           <Switch>
             <Route path="/home/signin">
@@ -17,7 +17,7 @@ function HomeScreen(props) {
             <Route path="/home">
               <div
                 id="homescreen-container-left"
-                className="image-container-centered-content"
+                className="image-centered-container"
               >
                 <img id="homescreen-logo" src={bell} alt="Tinko" />
                 <div></div>
@@ -25,7 +25,7 @@ function HomeScreen(props) {
               <div id="homescreen-container-right">
                 <div id="homescreen-title">TINKO</div>
                 <div id="homescreen-subtitle">
-                  An effective tool for team communicaton.
+                  An effective tool for team communication.
                 </div>
                 <div id="homescreen-container-buttons-container">
                   <Link to="/home/signup">

@@ -1,0 +1,17 @@
+@import '../base/base';
+
+@mixin button-opacity($initial-opacity: 0.8, $time: 0.3s) {
+    @include hover-opacity($initial-opacity: $initial-opacity, $time: $time);
+    
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+@mixin button-appearance($background-color, $color, $font-size, $border-radius: 5px) {
+    background-color: $background-color;
+    color: $color;
+    font-size: $font-size;
+    border: 0;
+    border-radius: $border-radius;
+}

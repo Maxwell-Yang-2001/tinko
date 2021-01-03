@@ -1,6 +1,6 @@
 import './App.css';
 import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
-import HomeScreen from './homeScreen/HomeScreen';
+import HomeScreen from './homeScreen/homeScreen';
 import { useState } from 'react';
 
 function App() {

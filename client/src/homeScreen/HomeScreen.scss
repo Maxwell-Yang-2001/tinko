@@ -1,88 +1,20 @@
+@import "../styles/themes/theme";
+@import "../styles/base/base";
+@import "../styles/components/button";
+@import "../styles/components/div";
+
 $button-width: 230px;
-$orange-theme: #F1522A;
-$white-theme: #FFFFFF;
-$light-grey-theme: #AAAAAA;
-$grey-theme: #888888;
 $button-horizontal-padding: 20px;
 $button-vertical-padding: 15px;
 $button-margin: 10px;
-$border-radius: 5px;
-
-a {
-    text-decoration: none;
-}
-
-@mixin placeholder-rule {
-    opacity: 1;
-    color: $light-grey-theme;
-}
-
-@mixin orange-themed-button {
-    background-color: $orange-theme;
-    font-size: 20px;
-}
-
-::placeholder {
-    @include placeholder-rule;
-}
-
-:-ms-input-placeholder {
-    @include placeholder-rule;
-}
-
-::-ms-input-placeholder {
-    @include placeholder-rule;
-}
-
-.white-font {
-    color: $white-theme;
-}
-
-.orange-font {
-    color: $orange-theme;
-}
-
-.homescreen-button:hover {
-    opacity: 1;
-}
+$homescreen-container-margin: 20px;
 
 .homescreen-button {
     width: $button-width;
     min-Height: 60px;
-    border: 0;
-    border-radius: $border-radius;
-    cursor: pointer;
-    opacity: 0.8;
     padding-left: $button-horizontal-padding;
     padding-right: $button-horizontal-padding;
-    transition: opacity 0.3s ease-in-out;
-}
-
-.centered-content {
-    display: -ms-flexbox;
-    display: flex;
-    -ms-flex-direction: column;
-    flex-direction: column;
-    -ms-flex-align: center;
-    align-items: center;
-    -ms-flex-pack: center;
-    justify-content: center;
-}
-
-.image-container-centered-content {
-    text-align: center;
-    vertical-align: middle;
-}
-
-// To center inline block, please include a dummy div next to it
-.image-container-centered-content > * {
-    display: inline-block;
-    vertical-align: middle;
-    height: 100%;
-}
-
-.font-bold-weight {
-    font-weight: 700;
+    @include button-opacity;
 }
 
 .signbox-underline {
@@ -108,12 +40,11 @@ a {
 }
 
 #homescreen-button1 {
-    @include orange-themed-button;
+    @include button-appearance($orange-theme, $white-theme, 20px);
 }
 
 #homescreen-button2 {
-    background-color: $white-theme;
-    font-size: 16px;
+    @include button-appearance($white-theme, $black-theme, 16px);
 }
 
 #homescreen-logo {
@@ -153,8 +84,7 @@ a {
 
 #signbox-container {
     background-color: $white-theme;
-    border-radius: $border-radius;
-    padding: 30px;
+    @include rounded-div;
 }
 
 #signpage-title {
@@ -164,7 +94,7 @@ a {
 }
 
 #sign-button {
-    @include orange-themed-button;
+    @include button-appearance($orange-theme, $white-theme, 20px);
     width: 100%;
     margin-top: 40px;
 }
@@ -177,7 +107,7 @@ a {
 }
 
 // screen-exclusive
-@media only screen and (max-width: 649px) {
+@include mobileOnly {
     #homescreen-logo {
         width: 300 / 650 * 100%;
         height: auto;
@@ -202,21 +132,15 @@ a {
     }
 }
 
-@media only screen and (min-width: 650px) {
+@include notMobile {
     #homescreen-container {
-        display: -ms-flexbox;
-        display: flex;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        -ms-flex-pack: start;
-        justify-content: flex-start;
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+        @include flex-horizontal-centered-container;
+        margin-left: $homescreen-container-margin;
+        margin-right: $homescreen-container-margin;
     }
 }
 
-@media only screen and (max-width: 849px) {
-
+@include notDesktop {
     #homescreen-container-buttons-container {
         text-align: center;
     }
@@ -234,7 +158,7 @@ a {
     }
 }
 
-@media only screen and (min-width: 850px) {
+@include desktopOnly {
     #homescreen-button1 {
         margin-right: $button-margin;
     }
