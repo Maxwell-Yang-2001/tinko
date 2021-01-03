@@ -8,6 +8,7 @@ $button-horizontal-padding: 20px;
 $button-vertical-padding: 15px;
 $button-margin: 10px;
 $homescreen-container-margin: 20px;
+$signbox-container-padding: 30px;
 
 .homescreen-button {
     width: $button-width;
@@ -15,6 +16,7 @@ $homescreen-container-margin: 20px;
     padding-left: $button-horizontal-padding;
     padding-right: $button-horizontal-padding;
     @include button-opacity;
+    @include apply-shadow;
 }
 
 .signbox-underline {
@@ -30,13 +32,11 @@ $homescreen-container-margin: 20px;
 }
 
 #signbox-container > input {
-    width: 300px;
     display: block;
     margin-top: 10px;
     border-width: 0px;
     font-size: 20px;
-    outline: none;
-    padding: 2px;
+    padding: 0;
 }
 
 #homescreen-button1 {
@@ -84,7 +84,8 @@ $homescreen-container-margin: 20px;
 
 #signbox-container {
     background-color: $white-theme;
-    @include rounded-div;
+    @include rounded-div($signbox-container-padding);
+    @include apply-shadow;
 }
 
 #signpage-title {
@@ -130,6 +131,10 @@ $homescreen-container-margin: 20px;
     .homescreen-button {
         margin: auto;
     }
+
+    #signbox-container > input {
+        width: calc(150px + 100vw * 150 / 650);
+    }
 }
 
 @include notMobile {
@@ -137,6 +142,10 @@ $homescreen-container-margin: 20px;
         @include flex-horizontal-centered-container;
         margin-left: $homescreen-container-margin;
         margin-right: $homescreen-container-margin;
+    }
+
+    #signbox-container > input {
+        width: 300px;
     }
 }
 

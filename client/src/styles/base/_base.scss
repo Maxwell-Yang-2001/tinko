@@ -1,5 +1,16 @@
+@import "../themes/theme";
+
 a {
     text-decoration: none;
+}
+
+button {
+    border: 0;
+    outline: none;
+}
+
+input {
+    outline: none;
 }
 
 @mixin placeholder-rule {
@@ -26,6 +37,10 @@ a {
     &:hover {
         opacity: 1;
     }
+}
+
+@mixin apply-shadow($depth : 3px, $blur : 3px, $color : $grey-theme) {
+    box-shadow: $depth $depth $blur $color;
 }
 
 @mixin centered-container {
