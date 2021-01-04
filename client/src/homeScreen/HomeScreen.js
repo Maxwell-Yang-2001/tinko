@@ -2,7 +2,7 @@ import "./homeScreen.scss";
 import bell from "./../assets/bell.png";
 import { Switch, BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-function HomeScreen(props) {
+function HomeScreen() {
   return (
     <Router>
       <div id="homescreen-background" className="centered-container">

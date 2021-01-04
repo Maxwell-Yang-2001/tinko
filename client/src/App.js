@@ -1,6 +1,7 @@
 import './App.css';
 import { Switch, BrowserRouter as Router, Route } from 'react-router-dom';
 import HomeScreen from './homeScreen/homeScreen';
+import TeamScreen from './teamScreen/teamScreen';
 import { useState } from 'react';
 
 function App() {
@@ -12,6 +13,9 @@ function App() {
         <Switch>
           <Route path="/home">
             <HomeScreen />
+          </Route>
+          <Route path="/team">
+            <TeamScreen />
           </Route>
         </Switch>
       </Router>
