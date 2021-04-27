@@ -1,6 +1,0 @@
-@use '../themes/theme';
-
-@mixin rounded-div($padding, $border-radius: 5px) {
-    border-radius: 5px;
-    padding: 30px;
-}
