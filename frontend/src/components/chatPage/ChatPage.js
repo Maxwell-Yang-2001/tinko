@@ -11,7 +11,7 @@ const useStyles = makeStyles({
         cursor: resizeWidthDown => resizeWidthDown ? "col-resize" : "default",
         "& > div": {
             height: "100%",
-            display: "inline-block",
+            display: "inline-flex",
         },
     },
 });
