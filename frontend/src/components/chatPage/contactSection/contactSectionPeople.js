@@ -6,7 +6,7 @@ import { useState } from "react";
 import {
   CONTACT_SECTION_BACKGROUND_COLOR,
   CONTACT_SECTION_SELECTED_BACKGROUND_COLOR,
-  CONTACT_SECTION_SPLITTER_BACKGROUND_COLOR,
+  CONTACT_SECTION_HOVER_BACKGROUND_COLOR,
   PEOPLE_STATUS_ACTIVE_COLOR,
   PEOPLE_STATUS_AWAY_COLOR,
   PEOPLE_STATUS_BUSY_COLOR,
@@ -36,6 +36,9 @@ const useStyles = makeStyles({
       opacity: 1,
       cursor: "pointer",
     },
+    textOverflow: "ellipsis",
+    overflow: "hidden",
+    whiteSpace: "nowrap",
   },
   titleCount: {
     marginLeft: 5,
@@ -50,8 +53,8 @@ const useStyles = makeStyles({
     transition: "background-color .2s",
     borderColor: CONTACT_SECTION_BACKGROUND_COLOR,
     "&:hover": {
-      borderColor: CONTACT_SECTION_SPLITTER_BACKGROUND_COLOR,
-      backgroundColor: CONTACT_SECTION_SPLITTER_BACKGROUND_COLOR,
+      borderColor: CONTACT_SECTION_HOVER_BACKGROUND_COLOR,
+      backgroundColor: CONTACT_SECTION_HOVER_BACKGROUND_COLOR,
       cursor: "pointer",
     },
     "&.selected": {
@@ -93,6 +96,11 @@ const useStyles = makeStyles({
           backgroundColor: PEOPLE_STATUS_OFFLINE_COLOR,
         },
       },
+    },
+    "& > :nth-child(2)": {
+      textOverflow: "ellipsis",
+      overflow: "hidden",
+      whiteSpace: "nowrap",
     },
   },
   dropDownIcon: {

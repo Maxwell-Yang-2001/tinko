@@ -6,7 +6,7 @@ import LocalMallIcon from "@material-ui/icons/LocalMall";
 import { useState } from "react";
 import {
   CONTACT_SECTION_SELECTED_BACKGROUND_COLOR,
-  CONTACT_SECTION_SPLITTER_BACKGROUND_COLOR,
+  CONTACT_SECTION_HOVER_BACKGROUND_COLOR,
 } from "../../../common/constants";
 
 const useStyles = makeStyles({
@@ -47,7 +47,7 @@ const useStyles = makeStyles({
     borderRadius: 3,
     transition: "background-color .2s",
     "&:hover": {
-      backgroundColor: CONTACT_SECTION_SPLITTER_BACKGROUND_COLOR,
+      backgroundColor: CONTACT_SECTION_HOVER_BACKGROUND_COLOR,
       cursor: "pointer",
     },
     "&.selected": {
@@ -190,7 +190,7 @@ function ContactSectionChannels(props) {
             setSelectedChannelHref(null);
           }}
         >
-          CHANNELS<span className={styles.titleCount}>(123)</span>
+          CHANNELS<span className={styles.titleCount}>(6)</span>
         </span>
         <ArrowDropDownIcon
           classes={{ root: styles.dropDownIcon }}

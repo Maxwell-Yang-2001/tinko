@@ -4,6 +4,7 @@ import NotificationsOffIcon from "@material-ui/icons/NotificationsOff";
 import {
   CONTACT_SECTION_END_BACKGROUND_COLOR,
   CONTACT_SECTION_SPLITTER_BACKGROUND_COLOR,
+  SECTION_TITLE_HEIGHT,
 } from "../../../common/constants";
 import { useState } from "react";
 
@@ -11,10 +12,12 @@ const useStyles = makeStyles({
   contactSectionHeader: {
     margin: 0,
     borderBottom: `1px solid ${CONTACT_SECTION_SPLITTER_BACKGROUND_COLOR}`,
-    padding: "20px 15px",
+    paddingLeft: 15,
+    paddingRight: 15,
     fontSize: 16,
     fontWeight: 900,
     display: "flex",
+    height: SECTION_TITLE_HEIGHT,
     alignItems: "center",
     transition: "background-color .2s",
     "&:hover": {

@@ -1,4 +1,5 @@
 import { makeStyles } from '@material-ui/core/styles';
+import ChatSectionHeader from './chatSection/chatSectionHeader';
 
 const useStyles = makeStyles({
     chatSectionContainer: {
@@ -14,7 +15,9 @@ function ChatSection(props) {
 
     const styles = useStyles(contactSectionWidth);
 
-    return <div className={styles.chatSectionContainer}>2</div>;
+    return <div className={styles.chatSectionContainer}>
+        <ChatSectionHeader />
+    </div>;
 }
 
 export default ChatSection;

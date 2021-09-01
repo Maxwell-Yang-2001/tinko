@@ -2,14 +2,17 @@ import { makeStyles } from "@material-ui/core/styles";
 import {
   CONTACT_SECTION_END_BACKGROUND_COLOR,
   CONTACT_SECTION_SPLITTER_BACKGROUND_COLOR,
+  SECTION_END_HEIGHT,
 } from "../../../common/constants";
 
 const useStyles = makeStyles({
   ContactSectionEnder: {
     margin: "auto 0 0 0",
+    height: SECTION_END_HEIGHT,
     borderTop: `1px solid ${CONTACT_SECTION_SPLITTER_BACKGROUND_COLOR}`,
     backgroundColor: CONTACT_SECTION_END_BACKGROUND_COLOR,
-    padding: "20px 15px",
+    paddingLeft: 15,
+    paddingRight: 15,
     fontSize: 15,
     "& > img": {
       width: 25,
