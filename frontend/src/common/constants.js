@@ -3,7 +3,7 @@ export const CONTACT_SECTION_MIN_WIDTH = 200;
 export const CONTACT_SECTION_MAX_WIDTH = 400;
 export const RESIZABLE_WIDTH = 10;
 
-export const SECTION_TITLE_HEIGHT = 60;
+export const SECTION_TITLE_HEIGHT = 50;
 export const SECTION_END_HEIGHT = 60;
 
 export const CONTACT_SECTION_FONT_COLOR = "#FFFFFF";

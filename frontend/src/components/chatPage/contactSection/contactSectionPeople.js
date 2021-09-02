@@ -7,11 +7,8 @@ import {
   CONTACT_SECTION_BACKGROUND_COLOR,
   CONTACT_SECTION_SELECTED_BACKGROUND_COLOR,
   CONTACT_SECTION_HOVER_BACKGROUND_COLOR,
-  PEOPLE_STATUS_ACTIVE_COLOR,
-  PEOPLE_STATUS_AWAY_COLOR,
-  PEOPLE_STATUS_BUSY_COLOR,
-  PEOPLE_STATUS_OFFLINE_COLOR,
 } from "../../../common/constants";
+import PeopleIcon from "../commonComponents/peopleIcon";
 
 const useStyles = makeStyles({
   ContactSectionChannels: {
@@ -71,31 +68,6 @@ const useStyles = makeStyles({
     "& > :nth-child(1)": {
       marginRight: 5,
       borderColor: "inherit",
-      "& > img": {
-        width: 20,
-        height: 20,
-      },
-      "& > div": {
-        position: "absolute",
-        left: 18,
-        top: 18,
-        width: 6,
-        height: 6,
-        borderRadius: 5,
-        border: "2px solid",
-        backgroundColor: PEOPLE_STATUS_ACTIVE_COLOR,
-        borderColor: "inherit",
-        transition: "border-color .2s",
-        "&.status-away": {
-          backgroundColor: PEOPLE_STATUS_AWAY_COLOR,
-        },
-        "&.status-busy": {
-          backgroundColor: PEOPLE_STATUS_BUSY_COLOR,
-        },
-        "&.status-offline": {
-          backgroundColor: PEOPLE_STATUS_OFFLINE_COLOR,
-        },
-      },
     },
     "& > :nth-child(2)": {
       textOverflow: "ellipsis",
@@ -171,13 +143,7 @@ function PeopleEntry(props) {
         setSelectedPeopleHref(href);
       }}
     >
-      <div>
-        <img
-          alt="people-icon"
-          src="https://d35aaqx5ub95lt.cloudfront.net/favicon.ico"
-        ></img>
-        <div className={status === "active" ? "" : `status-${status}`}></div>
-      </div>
+      <PeopleIcon status={status} width={20} />
       <span>{name}</span>
       <CloseIcon
         classes={{ root: styles.closeButton }}

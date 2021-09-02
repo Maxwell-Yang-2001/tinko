@@ -14,7 +14,7 @@ const useStyles = makeStyles({
     borderBottom: `1px solid ${CONTACT_SECTION_SPLITTER_BACKGROUND_COLOR}`,
     paddingLeft: 15,
     paddingRight: 15,
-    fontSize: 16,
+    fontSize: 17,
     fontWeight: 900,
     display: "flex",
     height: SECTION_TITLE_HEIGHT,
