@@ -31,6 +31,9 @@ const useStyles = makeStyles({
         color: FONT_GREY_COLOR,
         paddingTop: 3,
         marginLeft: 10,
+        "&:hover": {
+          cursor: "pointer",
+        }
       },
       "& > :nth-child(3)": {
         marginLeft: "auto",
@@ -38,7 +41,7 @@ const useStyles = makeStyles({
         alignItems: "center",
         width: 29,
         height: 29,
-        borderRadius: 3,
+        borderRadius: 5,
         display: "flex",
         "&:hover": {
           backgroundColor: BACKGROUND_DEEP_LIGHT_GREY_COLOR,
