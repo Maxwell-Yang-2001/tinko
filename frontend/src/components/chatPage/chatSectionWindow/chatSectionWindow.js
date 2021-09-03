@@ -9,17 +9,17 @@ const useStyles = makeStyles({
         height: "100%",
         width: threadWindowWidth => `calc(100% - ${threadWindowWidth}px)`,
         "&.is-thread": {
-            width: threadWindowWidth => threadWindowWidth - 31,
+            width: threadWindowWidth => threadWindowWidth - 1,
             borderLeft: `1px solid ${CHAT_SECTION_SPLITTER_BACKGROUND_COLOR}`,
         }
     }
   });
 
-  function ChatSectionWindow({threadWindowWidth, isThread}) {
+  function ChatSectionWindow({threadWindowWidth, isThread, setThreadWindowActive}) {
     const styles = useStyles(threadWindowWidth);
 
     return <div className={`${styles.chatSectionWindow} ${isThread ? "is-thread" : ""}`}>
-        <ChatSectionWindowHeader isThread={isThread}/>
+        <ChatSectionWindowHeader isThread={isThread} setThreadWindowActive={setThreadWindowActive}/>
         <ChatSectionWindowBody />
         <ChatSectionWindowFooter />
     </div>;

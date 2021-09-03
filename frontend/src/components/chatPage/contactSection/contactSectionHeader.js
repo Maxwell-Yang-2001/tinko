@@ -12,6 +12,7 @@ const useStyles = makeStyles({
   contactSectionHeader: {
     margin: 0,
     borderBottom: `1px solid ${CONTACT_SECTION_SPLITTER_BACKGROUND_COLOR}`,
+    boxSizing: "border-box",
     paddingLeft: 15,
     paddingRight: 15,
     fontSize: 17,

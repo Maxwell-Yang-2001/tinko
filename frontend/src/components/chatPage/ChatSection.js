@@ -58,6 +58,7 @@ function ChatSection(props) {
       {threadWindowActive && (
         <ChatSectionWindow
           threadWindowWidth={threadWindowWidth}
+          setThreadWindowActive={setThreadWindowActive.bind(this)}
           isThread={true}
         />
       )}

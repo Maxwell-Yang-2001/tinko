@@ -12,8 +12,10 @@ const useStyles = makeStyles({
     width: "100%",
     height: SECTION_TITLE_HEIGHT,
     display: "flex",
+    boxSizing: "border-box",
     paddingLeft: 15,
     paddingRight: 15,
+    borderBottom: `1px solid ${BACKGROUND_DEEP_LIGHT_GREY_COLOR}`,
     "& > *": {
       marginTop: "auto",
       marginBottom: "auto",
@@ -21,7 +23,7 @@ const useStyles = makeStyles({
     // thread header
     ".is-thread > &": {
       "& > :nth-child(1)": {
-        fontSize: 17,
+        fontSize: 18,
         color: FONT_BLACK_COLOR,
         fontWeight: 900,
       },
@@ -53,7 +55,19 @@ const useStyles = makeStyles({
       },
     },
     // channel header
-    ":not(.is-thread) > &": {},
+    ":not(.is-thread) > &": {
+      "& > :nth-child(1)": {
+        fontSize: 18,
+        color: FONT_BLACK_COLOR,
+        fontWeight: 900,
+      },
+      "& > :nth-child(2)": {
+        fontSize: 18,
+        color: FONT_BLACK_COLOR,
+        fontWeight: 900,
+        marginLeft: 5,
+      },
+    },
   },
   closeButton: {
     width: 21,
@@ -69,20 +83,21 @@ const mockThread = {
   public: false,
 };
 
-function ChatSectionWindowHeader({ isThread }) {
+function ChatSectionWindowHeader({isThread, setThreadWindowActive}) {
   const styles = useStyles();
 
   return isThread ? (
     <div className={styles.chatSectionWindowHeader}>
       <span>Thread</span>
       <span>Maxwell Yang</span>
-      <div>
-        <CloseIcon classes={{ root: styles.closeButton }} />
+      <div onClick={() => {setThreadWindowActive(false)}}>
+        <CloseIcon classes={{ root: styles.closeButton}}/>
       </div>
     </div>
   ) : (
     <div className={styles.chatSectionWindowHeader}>
-      <span>Channel</span>
+      <span>#</span>
+      <span>general</span>
     </div>
   );
 }
